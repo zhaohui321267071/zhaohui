@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>每日打卡</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero" aria-labelledby="app-title">
+        <div>
+          <p class="eyebrow">Daily Check-in</p>
+          <h1 id="app-title">每日打卡</h1>
+          <p class="subtitle">记录今天的小目标，保持连续行动。</p>
+        </div>
+        <div class="today-card" aria-live="polite">
+          <span id="today-weekday">今天</span>
+          <strong id="today-date">--</strong>
+        </div>
+      </section>
+
+      <section class="stats-grid" aria-label="打卡统计">
+        <article class="stat-card">
+          <span>连续打卡</span>
+          <strong id="streak-count">0</strong>
+          <small>天</small>
+        </article>
+        <article class="stat-card">
+          <span>累计打卡</span>
+          <strong id="total-count">0</strong>
+          <small>次</small>
+        </article>
+        <article class="stat-card">
+          <span>本月打卡</span>
+          <strong id="month-count">0</strong>
+          <small>天</small>
+        </article>
+      </section>
+
+      <section class="checkin-panel" aria-labelledby="checkin-heading">
+        <div>
+          <h2 id="checkin-heading">今天完成了吗？</h2>
+          <p id="checkin-status">写一句备注，然后点击按钮完成今日打卡。</p>
+        </div>
+        <label class="note-field">
+          <span>今日备注</span>
+          <textarea id="note-input" maxlength="120" rows="3" placeholder="例如：晨跑 3 公里、读书 30 分钟"></textarea>
+        </label>
+        <button id="checkin-button" type="button">立即打卡</button>
+      </section>
+
+      <section class="history-panel" aria-labelledby="history-heading">
+        <div class="section-title-row">
+          <h2 id="history-heading">打卡记录</h2>
+          <button id="clear-button" class="ghost-button" type="button">清空记录</button>
+        </div>
+        <ul id="history-list" class="history-list" aria-live="polite"></ul>
+        <p id="empty-state" class="empty-state">还没有打卡记录，从今天开始吧！</p>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
